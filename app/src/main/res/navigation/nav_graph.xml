@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.rohitksingh.kotlincupcakeapp.StartFragment"
+        android:label="@string/cupcake"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startFragment_to_flavorFragment"
+            app:destination="@id/flavorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flavorFragment"
+        android:name="com.rohitksingh.kotlincupcakeapp.FlavorFragment"
+        android:label="@string/choose_flavour"
+        tools:layout="@layout/fragment_flavor">
+        <action
+            android:id="@+id/action_flavorFragment_to_pickupFragment"
+            app:destination="@id/pickupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickupFragment"
+        android:name="com.rohitksingh.kotlincupcakeapp.PickupFragment"
+        android:label="@string/choose_pickup_date"
+        tools:layout="@layout/fragment_pickup">
+        <action
+            android:id="@+id/action_pickupFragment_to_sumaryFragment"
+            app:destination="@id/sumaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sumaryFragment"
+        android:name="com.rohitksingh.kotlincupcakeapp.SumaryFragment"
+        android:label="@string/order_summary"
+        tools:layout="@layout/fragment_sumary" />
+</navigation>

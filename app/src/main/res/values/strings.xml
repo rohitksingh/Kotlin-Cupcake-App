@@ -2,4 +2,9 @@
     <string name="app_name">Kotlin Cupcake App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cupcake">Cupcake</string>
+    <string name="choose_flavour">Choose Flavor</string>
+    <string name="choose_pickup_date">Choose Pickup Date</string>
+    <string name="order_summary">Order Summary</string>
+
 </resources>
