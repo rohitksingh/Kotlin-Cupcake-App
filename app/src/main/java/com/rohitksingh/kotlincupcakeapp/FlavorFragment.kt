@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.rohitksingh.kotlincupcakeapp.databinding.FragmentFlavorBinding
 import com.rohitksingh.kotlincupcakeapp.model.OrderViewModel
 
 // TODO: Rename parameter arguments, choose names that match
@@ -16,26 +18,33 @@ import com.rohitksingh.kotlincupcakeapp.model.OrderViewModel
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FlavorFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class FlavorFragment : Fragment() {
 
-    val viewmodel : OrderViewModel by activityViewModels()
+    private val viewModel : OrderViewModel by activityViewModels()
+    private var binding : FragmentFlavorBinding? = null
+
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_flavor, container, false)
+        binding = FragmentFlavorBinding.inflate(inflater, container, false)
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(this.requireContext(), viewmodel.quantity.value.toString() , Toast.LENGTH_SHORT).show()
+        binding?.apply {
+            flavorFragment = this@FlavorFragment
+        }
+        Toast.makeText(this.requireContext(), viewModel.quantity.value.toString() , Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 
     fun navigateToPickupFragment(){
-
+        findNavController().navigate(R.id.action_flavorFragment_to_pickupFragment)
     }
 
 }
