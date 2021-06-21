@@ -43,6 +43,7 @@ class StartFragment : Fragment() {
 
     fun orderCupCakes(quantity: Int){
         viewmodel.setQuantity(quantity)
+        viewmodel.setFlavor(getString(R.string.chocolate))
         val action = StartFragmentDirections.actionStartFragmentToFlavorFragment()
         findNavController().navigate(action)
     }

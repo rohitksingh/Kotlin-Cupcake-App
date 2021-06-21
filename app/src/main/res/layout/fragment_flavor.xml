@@ -33,7 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/vanilla"
-                    android:checked="true"
+                    android:checked="@{viewmodel.flavor.equals((@string/vanilla))}"
                     android:onClick="@{() -> viewmodel.setFlavor(@string/vanilla)}"
                     />
 
@@ -42,6 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/chocolate"
+                    android:checked="@{viewmodel.flavor.equals((@string/chocolate))}"
                     android:onClick="@{() -> viewmodel.setFlavor(@string/chocolate)}"
                     />
 
@@ -50,6 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/red_velvet"
+                    android:checked="@{viewmodel.flavor.equals((@string/red_velvet))}"
                     android:onClick="@{() -> viewmodel.setFlavor(@string/red_velvet)}"
                     />
 
@@ -58,6 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/salted_caramel"
+                    android:checked="@{viewmodel.flavor.equals((@string/salted_caramel))}"
                     android:onClick="@{() -> viewmodel.setFlavor(@string/salted_caramel)}"
                     />
 

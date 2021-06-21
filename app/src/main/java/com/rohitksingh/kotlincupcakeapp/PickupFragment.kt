@@ -21,7 +21,6 @@ private const val ARG_PARAM2 = "param2"
  */
 class PickupFragment : Fragment() {
 
-
     val viewModel : OrderViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
