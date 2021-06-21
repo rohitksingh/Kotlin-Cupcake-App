@@ -13,12 +13,6 @@ import androidx.navigation.fragment.navArgs
 import com.rohitksingh.kotlincupcakeapp.databinding.FragmentFlavorBinding
 import com.rohitksingh.kotlincupcakeapp.model.OrderViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-
 class FlavorFragment : Fragment() {
 
     private val viewModel : OrderViewModel by activityViewModels()
@@ -34,6 +28,7 @@ class FlavorFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
             flavorFragment = this@FlavorFragment
+            viewmodel = viewModel
         }
         Toast.makeText(this.requireContext(), viewModel.quantity.value.toString() , Toast.LENGTH_SHORT).show()
     }
