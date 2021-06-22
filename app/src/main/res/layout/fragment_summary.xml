@@ -2,7 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".SummaryFragment">
-
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.rohitksingh.kotlincupcakeapp.model.OrderViewModel" />
+        <variable
+            name="fragment"
+            type="com.rohitksingh.kotlincupcakeapp.SummaryFragment" />
+    </data>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -13,8 +20,6 @@
             android:orientation="vertical"
             android:padding="@dimen/side_margin">
 
-            <!-- Group the order details into a single ViewGroup and set focusable = true,
-                 so all fields will be read aloud together by the accessibility service -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,7 +41,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/order_summary_margin"
-                    tools:text="6 cupcakes" />
+                    tools:text="12"
+                    android:text="@{viewmodel.quantity.toString()}"/>
 
                 <View
                     android:id="@+id/divider1"
@@ -59,7 +65,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/order_summary_margin"
-                    tools:text="Chocolate" />
+                    tools:text="Chocolate"
+                    android:text="@{viewmodel.flavor.toString()}"
+                    />
 
                 <View
                     android:id="@+id/divider2"
@@ -82,7 +90,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/order_summary_margin"
-                    tools:text="Sunday" />
+                    tools:text="Sunday"
+                    android:text="@{viewmodel.pickup.toString()}"
+                    />
 
                 <View
                     android:id="@+id/divider3"

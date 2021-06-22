@@ -41,7 +41,7 @@ class PickupFragment : Fragment() {
     }
 
     fun navigateToSummaryFragment() {
-        findNavController().navigate(R.id.action_pickupFragment_to_sumaryFragment)
+        findNavController().navigate(R.id.action_pickupFragment_to_summaryFragment)
     }
 
 }

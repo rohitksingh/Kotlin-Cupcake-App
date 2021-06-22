@@ -29,12 +29,13 @@
         android:label="@string/choose_pickup_date"
         tools:layout="@layout/fragment_pickup">
         <action
-            android:id="@+id/action_pickupFragment_to_sumaryFragment"
-            app:destination="@id/sumaryFragment" />
+            android:id="@+id/action_pickupFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
     </fragment>
     <fragment
-        android:id="@+id/sumaryFragment"
-        android:name="com.rohitksingh.kotlincupcakeapp.SumaryFragment"
-        android:label="@string/order_summary"
-        tools:layout="@layout/fragment_sumary" />
+        android:id="@+id/summaryFragment"
+        android:name="com.rohitksingh.kotlincupcakeapp.SummaryFragment"
+        android:label="fragment_summary"
+        tools:layout="@layout/fragment_summary" />
+
 </navigation>
