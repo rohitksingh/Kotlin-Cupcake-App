@@ -3,6 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".PickupFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rohitksingh.kotlincupcakeapp.model.OrderViewModel" />
+        <variable
+            name="pickupFragment"
+            type="com.rohitksingh.kotlincupcakeapp.PickupFragment" />
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,25 +33,37 @@
                     android:id="@+id/option0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Thursday" />
+                    tools:text="Thursday"
+                    android:text="@{viewModel.pickupDates[0]}"
+                    android:onClick="@{() -> viewModel.setPickup(viewModel.pickupDates[0])}"
+                    />
 
                 <RadioButton
                     android:id="@+id/option1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Friday" />
+                    tools:text="Friday"
+                    android:text="@{viewModel.pickupDates[1]}"
+                    android:onClick="@{() -> viewModel.setPickup(viewModel.pickupDates[1])}"
+                    />
 
                 <RadioButton
                     android:id="@+id/option2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Saturday" />
+                    tools:text="Saturday"
+                    android:text="@{viewModel.pickupDates[2]}"
+                    android:onClick="@{() -> viewModel.setPickup(viewModel.pickupDates[2])}"
+                    />
 
                 <RadioButton
                     android:id="@+id/option3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Sunday" />
+                    tools:text="Sunday"
+                    android:text="@{viewModel.pickupDates[3]}"
+                    android:onClick="@{() -> viewModel.setPickup(viewModel.pickupDates[3])}"
+                    />
             </RadioGroup>
 
             <View
@@ -76,7 +96,9 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/subtotal" />
+                app:layout_constraintTop_toBottomOf="@id/subtotal"
+                android:onClick="@{() -> pickupFragment.navigateToSummaryFragment()}"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

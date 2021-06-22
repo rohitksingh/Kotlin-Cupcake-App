@@ -1,42 +1,47 @@
 package com.rohitksingh.kotlincupcakeapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.rohitksingh.kotlincupcakeapp.databinding.FragmentPickupBinding
 import com.rohitksingh.kotlincupcakeapp.model.OrderViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [PickupFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PickupFragment : Fragment() {
 
-    val viewModel : OrderViewModel by activityViewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    
+    private val viewmodel : OrderViewModel by activityViewModels()
+    var binding : FragmentPickupBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Toast.makeText(this.requireContext(), viewModel.quantity.value.toString() + viewModel.flavor.value, Toast.LENGTH_SHORT).show()
-        return inflater.inflate(R.layout.fragment_pickup, container, false)
+        binding = FragmentPickupBinding.inflate(inflater, container, false)
+        return binding!!.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.apply {
+            viewModel = viewmodel
+            pickupFragment = this@PickupFragment
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 
     fun navigateToSummaryFragment() {
-
+        findNavController().navigate(R.id.action_pickupFragment_to_sumaryFragment)
     }
+
 }
