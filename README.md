@@ -12,8 +12,8 @@ Implementations:
 ## Preview
 
 <p align="center">
-  <a href="https://user-images.githubusercontent.com/11274840/122846785-6e872500-d2bb-11eb-94a9-8313d469b69b.png"><img width="260" height="480" src="https://user-images.githubusercontent.com/11274840/112276234-be633b00-8c3d-11eb-9db6-a26019b958e7.png">
-</p></a>
+  <img width="260" height="480" src="https://user-images.githubusercontent.com/11274840/122846785-6e872500-d2bb-11eb-94a9-8313d469b69b.png">
+</p>
 
 </br></br>
 ## About author
@@ -26,8 +26,3 @@ Implementations:
   Rohit Singh
 </p>
 </a>
-
-
-
-Preview
-![Screenshot_1624323909](https://user-images.githubusercontent.com/11274840/122846785-6e872500-d2bb-11eb-94a9-8313d469b69b.png)
